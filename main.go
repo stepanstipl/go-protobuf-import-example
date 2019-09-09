@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	port = flag.Int("port", 10001, "The server port")
+	port    = flag.Int("port", 10001, "The server port")
 	address = flag.String("address", "localhost", "The server address")
 )
 
@@ -41,9 +41,9 @@ func (s *demoServer) GetInfo(ctx context.Context, in *pb.Empty) (*pb.Info, error
 	}
 
 	info := &pb.Info{
-		Id:                   "test",
-		Message:              "Hello world",
-		Pod:                  pod,
+		Id:      "test",
+		Message: "Hello world",
+		Pod:     pod,
 	}
 
 	return info, nil
