@@ -19,11 +19,11 @@ clean:
 
 proto-link:                            ## Generate go protobuf files using symlinked modules
 	./protobuf-import.sh
-	protoc -I ./protobuf-import -I ./ ./my.proto --go_out=plugins=grpc:./pb
+	protoc -I ./protobuf-import -I ./ ./my.proto --gofast_out=plugins=grpc:./pb
 
 proto-vendor:                          ## Generate go protobuf files using go mode vendor
 	go mod vendor
-	protoc -I ./vendor -I ./ ./my.proto --go_out=plugins=grpc:./pb
+	protoc -I ./vendor -I ./ ./my.proto --gofast_out=plugins=grpc:./pb
 
 run:                                   ## Runs the demo server
 	./build/main
