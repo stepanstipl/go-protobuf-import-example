@@ -25,5 +25,10 @@ proto-vendor:                          ## Generate go protobuf files using go mo
 	go mod vendor
 	protoc -I ./vendor -I ./ ./my.proto --gofast_out=plugins=grpc:./pb
 
+proto-source:                          ## Generate go protobuf files using source path
+	protoc -I $(GOPATH)/src \
+		-I ./ ./my.proto \
+		--gofast_out=plugins=grpc:./pb
+
 run:                                   ## Runs the demo server
 	./build/main
