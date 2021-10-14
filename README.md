@@ -61,3 +61,6 @@ NOTE: Can git clone, choosing to use go get since it the repo is still a `go` re
    ```bash
    go build -o build/main main.go
    ```
+
+A caveat is that versions have to be manually changed/updated by going directly to the
+directly and running the git commands to check out different tags/branches.
